@@ -1216,6 +1216,14 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .suites-location-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
         }
 
         .suites-badge-pin {
@@ -2201,7 +2209,7 @@
         <div class="container">
             <div class="elevate-grid">
                 <div class="elevate-image fade-in-left">
-                    <img src="STUDIO LOBBY.jpg" alt="Elevate Your Business with a Prestigious Address" loading="lazy">
+                    <img src="Elevate your business.jpeg" alt="Elevate Your Business with a Prestigious Address" loading="lazy">
                 </div>
                 <div class="elevate-content">
                     <span class="sub-label fade-in-right">PINKSIGNATURE</span>
@@ -2495,9 +2503,9 @@
                     <div class="suites-showcase-backdrop"></div>
                     <div class="suites-showcase-line"></div>
                     <div class="suites-img-card">
-                        <img src="Fern Marriot Hotel.jpeg" alt="The Fern Jaipur, Series by Marriott" loading="lazy">
+                        <img src="FERN.jpeg" alt="The Fern Jaipur, Series by Marriott" loading="lazy">
                     </div>
-                    <div class="suites-location-badge">
+                    <a href="https://www.fernhotels.com/rajasthans-lakes-palaces-forts-havelis/the-fern-an-ecotel-hotel-jaipur" target="_blank" rel="noopener noreferrer" class="suites-location-badge" aria-label="The Fern Jaipur, Series by Marriott">
                         <div class="suites-badge-pin">
                             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                         </div>
@@ -2505,7 +2513,7 @@
                             <span class="suites-badge-title">The Fern Jaipur,</span>
                             <span class="suites-badge-sub">Series by Marriott</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
