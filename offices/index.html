@@ -921,56 +921,374 @@
         }
 
         /* ============================================================
-           SECTION 7: LUXURY STUDIO SUITES (Light)
+           SECTION 7: LUXURY HOTELS FOR BUSINESS TRAVELERS (Light)
            ============================================================ */
         .suites-section {
             padding: 120px 0 130px;
+            background-color: var(--light-bg);
+            position: relative;
+            overflow: hidden;
         }
 
-        .suites-inner {
-            max-width: 860px;
-            margin: 0 auto;
+        .suites-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.95fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .suites-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
-        .suites-inner .section-heading {
+        .suites-content .sub-label {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .suites-content .section-heading {
             color: var(--text-dark);
-        }
-
-        .suites-inner .section-heading::after {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .suites-text {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--text-dark-muted);
-            margin-bottom: 22px;
-        }
-
-        .suites-text:last-child {
+            font-size: clamp(2.2rem, 3.4vw, 3.1rem);
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 0;
         }
 
-        .suites-stat {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .suites-content .section-heading::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 3.5px;
             background: var(--accent-gold);
-            color: var(--white);
-            padding: 18px 40px;
-            border-radius: 50px;
-            margin-top: 36px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            border-radius: 2px;
+            margin: 16px auto 22px;
         }
 
-        .suites-stat .count {
+        .suites-lead {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark-muted);
+            max-width: 620px;
+            margin-bottom: 28px;
+        }
+
+        /* Co-Branding Card */
+        .suites-cobrand-card {
+            background: #fdf5f4;
+            border: 1px solid rgba(216, 71, 68, 0.14);
+            border-radius: 18px;
+            padding: 18px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            width: 100%;
+            max-width: 580px;
+            margin-bottom: 34px;
+            box-shadow: 0 4px 20px rgba(216, 71, 68, 0.04);
+        }
+
+        .suites-cobrand-card .fern-logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .suites-cobrand-divider {
+            width: 1.5px;
+            height: 42px;
+            background: #e2e4ea;
+        }
+
+        .suites-series-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .suites-series-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 2rem;
+            font-weight: 800;
+            font-size: 1.85rem;
+            line-height: 0.95;
+            letter-spacing: -0.5px;
+            color: #1a1e28;
+        }
+
+        .suites-series-sub {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .suites-series-dots {
+            display: inline-flex;
+            gap: 2.5px;
+        }
+
+        .suites-series-dots span {
+            width: 5.5px;
+            height: 5.5px;
+            background: #2ea879;
+            border-radius: 1px;
+            display: inline-block;
+        }
+
+        .suites-series-by {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            color: #1a1e28;
+            text-transform: uppercase;
+        }
+
+        /* 3-Feature Badges */
+        .suites-features-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .suites-feat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .suites-feat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fdeeee;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .suites-feat-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .suites-feat-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .suites-feat-title {
+            font-family: 'Outfit', sans-serif;
             font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .suites-feat-desc {
+            font-size: 0.76rem;
+            line-height: 1.45;
+            color: var(--text-dark-muted);
+        }
+
+        /* 178 Rooms Pill CTA */
+        .suites-stat-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #e54743, #d73a36);
+            color: var(--white);
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 12px 30px rgba(216, 71, 68, 0.38);
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+
+        .suites-stat-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(216, 71, 68, 0.48);
+        }
+
+        .suites-stat-btn .count {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .suites-stat-btn .stat-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .suites-stat-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Right Showcase Column */
+        .suites-showcase {
+            position: relative;
+            padding: 20px;
+        }
+
+        .suites-showcase-backdrop {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 88%;
+            height: 88%;
+            background: #fae4e3;
+            border-radius: 32px;
+            z-index: 0;
+        }
+
+        .suites-showcase-line {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 60%;
+            height: 60%;
+            border-top: 1.5px solid #e2e4ea;
+            border-left: 1.5px solid #e2e4ea;
+            border-top-left-radius: 32px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .suites-img-card {
+            position: relative;
+            z-index: 2;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+            background: #ffffff;
+        }
+
+        .suites-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 24px;
+            transition: transform 0.6s ease;
+        }
+
+        .suites-img-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .suites-location-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            z-index: 3;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 11px 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .suites-badge-pin {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #fdeeee;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .suites-badge-pin svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .suites-badge-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .suites-badge-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.25;
+        }
+
+        .suites-badge-sub {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #5d6373;
+            line-height: 1.25;
+        }
+
+        @media (max-width: 1100px) {
+            .suites-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .suites-showcase {
+                max-width: 600px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .suites-cobrand-card {
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px;
+            }
+            .suites-cobrand-divider {
+                width: 60px;
+                height: 1.5px;
+            }
+            .suites-features-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .suites-location-badge {
+                bottom: 14px;
+                right: 14px;
+                padding: 8px 14px;
+            }
         }
 
         /* ============================================================
@@ -2112,18 +2430,82 @@
     </section>
 
     <!-- ============================================================
-         SECTION 7: LUXURY STUDIO SUITES (Light)
+         SECTION 7: LUXURY HOTELS FOR BUSINESS TRAVELERS (Light)
          ============================================================ -->
     <section class="suites-section section-light" id="suites">
-        <div class="container">
-            <div class="suites-inner">
-                <span class="sub-label fade-in" style="color: var(--accent-gold);">HOSPITALITY</span>
-                <h2 class="section-heading fade-in">Luxury Studio Suites for Business Travelers</h2>
-                <p class="suites-text fade-in">PinkSignature features 178 premium Studio Suites, offering unmatched convenience for visiting executives, clients, business partners, and corporate guests.</p>
-                <p class="suites-text fade-in">These fully integrated suites provide comfortable accommodation within the same development, making business travel seamless while enhancing the overall corporate experience.</p>
-                <div class="suites-stat fade-in-scale">
-                    <span class="count" data-target="178">0</span>
-                    <span>Premium Studio Suites</span>
+        <div class="container-wide">
+            <div class="suites-grid">
+                <!-- Left Content Column -->
+                <div class="suites-content">
+                    <span class="sub-label fade-in">HOSPITALITY</span>
+                    <h2 class="section-heading fade-in" style="font-family: 'Outfit', sans-serif;">Luxury Hotels for<br>Business Travelers</h2>
+                    <p class="suites-lead fade-in">In collaboration with The Fern Jaipur, Series by Marriott, PinkSignature offers premium, seamless and comfortable stays for executives, clients and business travelers.</p>
+                    
+                    <!-- Co-Branding Box -->
+                    <div class="suites-cobrand-card fade-in">
+                        <img src="The Fern Logo.webp" alt="The Fern Jaipur" class="fern-logo-img" loading="lazy">
+                        <div class="suites-cobrand-divider"></div>
+                        <div class="suites-series-brand">
+                            <span class="suites-series-title">series</span>
+                            <div class="suites-series-sub">
+                                <div class="suites-series-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="suites-series-by">BY MARRIOTT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Feature Points -->
+                    <div class="suites-features-row fade-in">
+                        <div class="suites-feat-item">
+                            <div class="suites-feat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                            </div>
+                            <div class="suites-feat-text">
+                                <span class="suites-feat-title">Premium Stays</span>
+                                <span class="suites-feat-desc">Modern rooms with business-friendly amenities</span>
+                            </div>
+                        </div>
+                        <div class="suites-feat-item">
+                            <div class="suites-feat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </div>
+                            <div class="suites-feat-text">
+                                <span class="suites-feat-title">Prime Location</span>
+                                <span class="suites-feat-desc">Conveniently located in Jaipur</span>
+                            </div>
+                        </div>
+                        <div class="suites-feat-item">
+                            <div class="suites-feat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                            </div>
+                            <div class="suites-feat-text">
+                                <span class="suites-feat-title">Business Ready</span>
+                                <span class="suites-feat-desc">Ideal for executives, clients and corporate guests</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image Showcase Column -->
+                <div class="suites-showcase fade-in-right">
+                    <div class="suites-showcase-backdrop"></div>
+                    <div class="suites-showcase-line"></div>
+                    <div class="suites-img-card">
+                        <img src="Fern Marriot Hotel.jpeg" alt="The Fern Jaipur, Series by Marriott" loading="lazy">
+                    </div>
+                    <div class="suites-location-badge">
+                        <div class="suites-badge-pin">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="suites-badge-text">
+                            <span class="suites-badge-title">The Fern Jaipur,</span>
+                            <span class="suites-badge-sub">Series by Marriott</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
